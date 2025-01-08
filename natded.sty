@@ -395,6 +395,14 @@
 % work-around for amsmath redefinition compatibility
 \let\ltx@label\label
 
+\newcommand{\labelIfExists}[1]{
+	\ifx#1
+		% no label
+	\else
+		\ltx@label{#1}
+	\fi
+}
+
 \def\statement@jaskb#1#2#3#4#5#6#7{%
 	\stpcl@jaskb{plevel}{\thedepth@jaskb}%
 	\ifnum#1>0\relax%
@@ -405,7 +413,7 @@
  	\fi%
 	%#3&...
 	\refstepcounter{linecount@jaskb}%
-	\thelinecount@jaskb\ltx@label{#7}.&\getle@jaskb{levexpr}{0}&\mbox{#6}\\%
+	\thelinecount@jaskb\labelIfExists{#7}.&\getle@jaskb{levexpr}{0}&\mbox{#6}\\%
 }
 
 \def\cblockmeasure@jaskb#1{%
