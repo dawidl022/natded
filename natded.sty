@@ -418,13 +418,13 @@
 
 \def\cblockmeasure@jaskb#1{%
 	\stepcounter{jdepth@jaskb}%
-	\gdef\hypo@jaskb##1##2##3##4{\jmeasurewidth@jaskb{##3}}%
-	\gdef\have@jaskb##1##2##3##4{\jmeasurewidth@jaskb{##3}}%
+	\gdef\hypo@jaskb##1##2##3##4##5{\jmeasurewidth@jaskb{##3}}%
+	\gdef\have@jaskb##1##2##3##4##5{\jmeasurewidth@jaskb{##3}}%
 	\makdl@jaskb{blockwidth}{\thejdepth@jaskb}%
 	\setdl@jaskb{blockwidth}{\thejdepth@jaskb}{\extrawin@jaskb}%
 	#1%
-	\gdef\hypo@jaskb##1##2##3##4{\measurewidth@jaskb{##3}}%
-	\gdef\have@jaskb##1##2##3##4{\measurewidth@jaskb{##3}}%
+	\gdef\hypo@jaskb##1##2##3##4##5{\measurewidth@jaskb{##3}}%
+	\gdef\have@jaskb##1##2##3##4##5{\measurewidth@jaskb{##3}}%
 	\addtocounter{jdepth@jaskb}{-1}%	
 }
 
@@ -464,8 +464,8 @@
 	\makcl@jaskb{plevel}{\thedepth@jaskb}
 	\setcl@jaskb{plevel}{\thedepth@jaskb}{0}
 	\begin{array}{lll}%
-		\gdef\hypo@jaskb##1##2##3##4{\jmeasurewidth@jaskb{##3}\statement@jaskb{\thedepth@jaskb}{}{##1}{##2}{\showmark@jaska##3}{##4}}%
-		\gdef\have@jaskb##1##2##3##4{\jmeasurewidth@jaskb{##3}\statement@jaskb{\thedepth@jaskb}{}{##1}{##2}{##3}{##4}}%
+		\gdef\hypo@jaskb##1##2##3##4##5{\jmeasurewidth@jaskb{##3}\statement@jaskb{\thedepth@jaskb}{}{##1}{##2}{\showmark@jaska##3}{##4}{##5}}%
+		\gdef\have@jaskb##1##2##3##4##5{\jmeasurewidth@jaskb{##3}\statement@jaskb{\thedepth@jaskb}{}{##1}{##2}{##3}{##4}{##5}}%
 		#1%
 	\end{array}%
 }
